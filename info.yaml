@@ -29,42 +29,42 @@ documentation:
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      a simple 8 bit based on 8bitworkshop
+      a simple 8 bit cpu based on 8bitworkshop.
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      Explain how to test your project
+      
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
+    - data_in[0]
+    - data_in[1]
+    - data_in[2]
+    - data_in[3]
+    - data_in[4]
+    - data_in[5]
+    - data_in[6]
+    - data_in[7]
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
+    - data_out[0]
+    - data_out[1]
+    - data_out[2]
+    - data_out[3]
+    - data_out[4]
+    - data_out[5]
+    - data_out[6]
+    - data_out[7]
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
+    - write
+    - address[0]
+    - address[1]
+    - address[2]
+    - address[3]
+    - address[4]
+    - address[5]
+    - address[6]
 
 # The following fields are optional
   tag:          ""      # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,

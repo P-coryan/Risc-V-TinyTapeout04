@@ -91,7 +91,7 @@ module CPU(clk, reset, address, data_in, data_out, write);
         end
 	// state 1: select opcode address
         S_SELECT: begin
-          address <= IP;
+          address <= IP[6:0];
           IP <= IP + 1;
           write <= 0;
           state <= S_DECODE;
@@ -106,18 +106,18 @@ module CPU(clk, reset, address, data_in, data_out, write);
             end
             // ALU A + immediate -> dest
             8'b01??????: begin
-	      address <= IP;
+	      address <= IP[6:0];
        	      IP <= IP + 1;
               state <= S_COMPUTE;
             end
             // ALU A + read [B] -> dest
             8'b11??????: begin
-              address <= B;
+              address <= B[6:0];
               state <= S_COMPUTE;
             end
             // A -> write [nnnn]
             8'b1001????: begin
-              address <= {4'b0, data_in[3:0]};
+              address <= {3'b0, data_in[3:0]};
               data_out <= A;
               write <= 1;
               state <= S_SELECT;
@@ -134,7 +134,7 @@ module CPU(clk, reset, address, data_in, data_out, write);
                 (data_in[0] && (data_in[1] == carry)) ||
                 (data_in[2] && (data_in[3] == zero))) 
               begin
-                address <= IP;
+                address <= IP[6:0];
                 state <= S_READ_IP;
               end else begin
                 state <= S_SELECT;

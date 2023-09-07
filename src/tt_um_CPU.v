@@ -13,7 +13,7 @@ module tt_um_CPU(
 wire reset; 
 assign uio_oe = 8'b1111_1111 ; 
 assign reset   = ~rst_n; 
-CPU(.clk(clk),
+CPU CPU8BIT(.clk(clk),
     .reset(reset), 
     .address(uio_out[7:1]), 
     .data_in(ui_in), 
